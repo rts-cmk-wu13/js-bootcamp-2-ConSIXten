@@ -1,13 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById("my-button");
-    let isToggled = false;
-    
-    button.addEventListener("click", function () {
-        if (isToggled) {
-            button.style.backgroundColor = "blue";
-        } else {
-            button.style.backgroundColor = "red";
-        }
-        isToggled = !isToggled;
-    });
+let button = document.querySelector(".btn");
+let colors = ["blue", "red"];
+
+button.addEventListener("click", () => {
+    button.classList.toggle("active");
+    button.style.backgroundColor = button.classList.contains("active") ? colors[1] : colors[0];
 });
